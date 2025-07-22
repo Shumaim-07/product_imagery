@@ -81,7 +81,7 @@ body {
 
 .progress-circle circle {
   fill: none;
-  stroke-width: 8;
+  stroke-width: 15;
   cx: 50;
   cy: 50;
   r: 35;
