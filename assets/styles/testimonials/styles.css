@@ -65,3 +65,27 @@
 .testimonial .carousel-item.active small {
   animation-delay: 0.8s;
 }
+/* Default positions for large screens (≥992px) */
+#testimonial-prev,
+#testimonial-next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Media query for screens smaller than 992px */
+@media (max-width: 991.98px) {
+  #testimonial-prev,
+  #testimonial-next {
+    position: relative;
+    top: auto;
+    bottom: 0;
+    transform: none;
+    display: inline-block;
+    margin: 20px 10px 0;
+  }
+
+  /* Center the buttons below the card */
+  #testimonialCarousel {
+    text-align: center;
+  }
+}
