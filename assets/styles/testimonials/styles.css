@@ -1,0 +1,67 @@
+
+.testimonial h2{
+    color: tomato;
+}
+.testimonial .card{
+    background-color: var(--primary-color);
+}
+/* Initially, no animation applied */
+.testimonial .card-body > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease;
+}
+
+/* Active state triggers animation */
+ .testimonial .card.animate > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* carousal buttons in testimonial section */
+#testimonialCarousel .carousel-control-prev-icon,
+#testimonialCarousel .carousel-control-next-icon {
+  background-color: rgba(158, 158, 158, 0.6); 
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-size: 60% 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-color 0.3s ease;
+  pointer-events: auto !important; 
+}
+#testimonialCarousel .carousel-control-prev-icon:hover,
+#testimonialCarousel .carousel-control-next-icon:hover {
+  background-color: var(--primary-color);
+}
+/* Animation for fade-in effect */
+/* This animation will be applied to each element in the card body */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.testimonial .carousel-item.active .card-body > * {
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+/* Delay for each element */
+.testimonial .carousel-item.active .card-body img {
+  animation-delay: 0.2s;
+}
+.testimonial .carousel-item.active .card-text {
+  animation-delay: 0.4s;
+}
+.testimonial .carousel-item.active h5 {
+  animation-delay: 0.6s;
+}
+.testimonial .carousel-item.active small {
+  animation-delay: 0.8s;
+}

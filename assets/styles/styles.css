@@ -1,0 +1,99 @@
+@import url("navbar/styles.css");
+@import url("main-hero/styles.css");
+@import url("grid/grid.css");
+@import url("purpose/styles.css");
+@import url("work-togathe/styles.css");
+@import url("testimonials/styles.css");
+@import url("footer/footer.css");
+@import url("about/styles.css");
+@import url("portfoilio/styles.css");
+@import url("services/styles.css");
+:root {
+    --primary-color: #d4b5a0;
+    --secondary-color: #f8f5f3;
+    --accent-color: #a08872;
+    --text-dark: #2c2c2c;
+    --text-light: #666;
+    --white: #ffffff;
+    --light-gray: #f5f5f5;
+    --border-color: #e0e0e0;
+    --light-bg: #eeeeee;
+     --gradient: linear-gradient(135deg, #ededed 0%, #000000 100%);
+     --background: linear-gradient(90deg, #d4b5a0, #f5deb3, #fff5ec);
+
+}
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 28.8px !important;
+    font-family: 'poppins' sans-serif;
+}
+
+/* Wrapper positioning */
+#scrollToTopWrapper {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  z-index: 999;
+}
+
+/* Scroll button */
+#scrollToTopBtn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  background-color: #d4b5a0;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show button when scrolled */
+#scrollToTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Hover animation */
+#scrollToTopBtn:hover {
+  background-color: #b48f75;
+  transform: scale(1.1);
+}
+
+/* SVG progress circle */
+.progress-circle {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  transform: rotate(-90deg);
+  z-index: 1;
+}
+
+.progress-circle circle {
+  fill: none;
+  stroke-width: 8;
+  cx: 50;
+  cy: 50;
+  r: 35;
+}
+
+.progress-circle .bg {
+  stroke: #eee;
+}
+
+.progress-circle .progress {
+  stroke: #d4b5a0;
+  stroke-dasharray: 282.6; /* 2πr (2 * π * 45) */
+  stroke-dashoffset: 282.6;
+  transition: stroke-dashoffset 0.2s linear;
+}

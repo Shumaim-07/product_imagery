@@ -1,0 +1,31 @@
+.instagram-placeholder {
+    aspect-ratio: 1;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.instagram-placeholder .img{
+    height:157px; width:157px
+
+}
+footer{
+    background: var(--background) !important;
+}
+.footer-nav-link{
+text-decoration: none;
+
+}
+.inst-img{
+    border-radius: 8px !important;
+}
+.instagram-placeholder {
+  transition: transform 0.3s ease;
+}
+
+.instagram-placeholder:hover {
+  transform: rotate(5deg);
+}
+.instagram-placeholder:hover {
+  transform: rotate(5deg) scale(1.05);
+}

@@ -1,0 +1,214 @@
+    .gallery-header {
+        background: var(--background);
+        margin-top: 100px;
+        color: white;
+        padding: 4rem 0 2rem 0;
+        margin-bottom: 2rem;
+    }
+
+    .gallery-header h1 {
+        font-weight: 300;
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .gallery-header p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        font-weight: 300;
+    }
+
+    .masonry-container {
+        column-count: 4;
+        column-gap: 1.5rem;
+        column-fill: balance;
+    }
+
+    @media (max-width: 1200px) {
+        .masonry-container {
+            column-count: 3;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .masonry-container {
+            column-count: 2;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .masonry-container {
+            column-count: 1;
+        }
+    }
+
+    .gallery-item {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        margin-bottom: 1.5rem;
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        background: white;
+    }
+
+
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: all 0.4s ease;
+    }
+
+
+
+    .gallery-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
+        opacity: 0;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+
+
+    .overlay-content {
+        text-align: center;
+        color: white;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+    }
+
+    .overlay-content h5 {
+        font-weight: 300;
+        margin-bottom: 0.5rem;
+    }
+
+    .overlay-content p {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        margin-bottom: 1rem;
+    }
+
+    .btn-view {
+        background: rgba(255, 255, 255, 0.2);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        border-radius: 25px;
+        padding: 8px 20px;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+    }
+
+
+    /* Category badges */
+    .category-badge {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background: rgba(255, 255, 255, 0.9);
+        color: #333;
+        padding: 5px 12px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        backdrop-filter: blur(10px);
+        z-index: 2;
+    }
+
+    /* Special height variations for masonry effect */
+    .gallery-item:nth-child(5n+1) {
+        height: auto;
+    }
+
+    .gallery-item:nth-child(5n+2) {
+        height: auto;
+    }
+
+    .gallery-item:nth-child(5n+3) {
+        height: auto;
+    }
+
+    /* Loading animation */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .gallery-item {
+        animation: fadeInUp 0.6s ease forwards;
+    }
+
+    /* Lightbox Modal Styles */
+    .modal-dialog-centered {
+        max-width: 90vw;
+    }
+
+    .modal-content {
+        background: transparent;
+        border: none;
+    }
+
+    .modal-body {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-body img {
+        max-width: 100%;
+        max-height: 80vh;
+        object-fit: contain;
+        border-radius: 10px;
+    }
+
+    .btn-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 9999;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Filter buttons */
+    .filter-buttons {
+        margin-bottom: 2rem;
+    }
+
+    .filter-buttons .btn {
+        margin: 0.25rem;
+        border-radius: 25px;
+        font-weight: 500;
+    }
+
+    .filter-buttons .btn-outline-primary {
+        border-color: #667eea;
+        color: #667eea;
+    }
+
+    .filter-buttons .btn-outline-primary:hover,
+    .filter-buttons .btn-outline-primary.active {
+        background-color: #667eea;
+        border-color: #667eea;
+    }

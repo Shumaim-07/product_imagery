@@ -1,0 +1,50 @@
+/*hero section */
+.hero {
+   background: var(--background) !important;
+   margin-top: 97px;
+}
+/* hero section button */
+.hero-btn {
+  letter-spacing: 0;
+  transition-property: all;
+  transition-duration: 0.6s;
+  transition-timing-function: ease;
+  font-size:25px;
+  color: #ff6347;
+  white-space: nowrap;
+}
+.hero-btn:hover,
+.hero-btn:active {
+  letter-spacing: 5px;
+  color: tomato;
+}
+.hero-btn:after,
+.hero-btn:before {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid rgba(255, 255, 255, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+.hero-btn:hover:after,
+.hero-btn:hover:before {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-color: tomato;
+  transition: width 350ms ease-in-out;
+  width: 100%;
+}
+.hero-btn:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 100%;
+}
+/* brands bar */
+.Wespecialize{
+    background-color: #fce5d4;
+}

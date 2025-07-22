@@ -1,0 +1,10 @@
+.work-together-section{
+   background-color: #ededed; 
+}
+.card{
+   border-radius: 20px;
+}
+.card:hover{
+   transform: scale(1.05);
+   transition: transform 0.3s ease-in-out;
+}
