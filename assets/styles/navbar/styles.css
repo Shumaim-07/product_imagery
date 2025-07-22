@@ -1,5 +1,6 @@
 nav {
     background: var(--background);
+    transition: 0.6s ease-in-out;
 }
 
 .nav-link {
