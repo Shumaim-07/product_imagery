@@ -99,3 +99,14 @@ body {
 }
 
 
+/*icons under the hero section*/
+  .icon-circle {
+    transition: transform 0.3s ease;
+  }
+
+  .icon-circle:hover {
+    transform: scale(1.5);
+  }
+  .icon-circle i {
+    color: #a0a0a0;
+  }
