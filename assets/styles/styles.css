@@ -121,3 +121,20 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+.btn:focus{
+ box-shadow: none !important;
+}
+.btn-custom{
+  border: 2px solid #d4b5a0 !important;
+   background: var(--primary-color) !important;
+   color: white;
+   font-weight: 600;
+   transition: 0.6s;
+}
+.btn-custom:hover{
+  color: white;
+ transform: scale(1.2);
+}
+.btn-custom:focus{
+  box-shadow: none !important;
+}
