@@ -91,33 +91,43 @@ $(document).ready(function () {
 
 });
 $(document).ready(function () {
-    function animateCounters() {
-      $('.counter').each(function () {
-        var $this = $(this);
-        var countTo = parseInt($this.attr('data-target'));
-        $({ countNum: 0 }).animate(
-          { countNum: countTo },
-          {
-            duration: 2000,
-            easing: 'swing',
-            step: function () {
-              $this.text(Math.floor(this.countNum));
-            },
-            complete: function () {
-              $this.text(countTo);
-            }
-          }
-        );
-      });
-    }
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+  }
 
-    // Optional: trigger when visible
-    let triggered = false;
-    $(window).on('scroll', function () {
-      var statsOffset = $('.about-stats').offset().top - window.innerHeight + 100;
-      if (!triggered && $(window).scrollTop() > statsOffset) {
-        animateCounters();
-        triggered = true;
-      }
+  function animateCounters() {
+    $('.counter').each(function () {
+      var $this = $(this);
+      var countTo = parseInt($this.attr('data-target'));
+      $({ countNum: 0 }).animate(
+        { countNum: countTo },
+        {
+          duration: 2000,
+          easing: 'swing',
+          step: function () {
+            $this.text(Math.floor(this.countNum) + '+');
+          },
+          complete: function () {
+            $this.text(countTo + '+');
+          }
+        }
+      );
     });
-  });
+  }
+
+  let animated = false;
+
+  function checkAndAnimate() {
+    if (!animated && isInViewport(document.querySelector('.about-stats'))) {
+      animateCounters();
+      animated = true;
+    }
+  }
+
+  // Check on scroll and when the page loads
+  $(window).on('scroll resize load', checkAndAnimate);
+});
