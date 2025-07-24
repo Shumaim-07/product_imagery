@@ -90,3 +90,34 @@ $(document).ready(function () {
   updateScrollProgress();
 
 });
+$(document).ready(function () {
+    function animateCounters() {
+      $('.counter').each(function () {
+        var $this = $(this);
+        var countTo = parseInt($this.attr('data-target'));
+        $({ countNum: 0 }).animate(
+          { countNum: countTo },
+          {
+            duration: 2000,
+            easing: 'swing',
+            step: function () {
+              $this.text(Math.floor(this.countNum));
+            },
+            complete: function () {
+              $this.text(countTo);
+            }
+          }
+        );
+      });
+    }
+
+    // Optional: trigger when visible
+    let triggered = false;
+    $(window).on('scroll', function () {
+      var statsOffset = $('.about-stats').offset().top - window.innerHeight + 100;
+      if (!triggered && $(window).scrollTop() > statsOffset) {
+        animateCounters();
+        triggered = true;
+      }
+    });
+  });
