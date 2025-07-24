@@ -52,7 +52,26 @@ window.onload = function () {
     }
   }
 };
-$(document).ready(function () {
+  $(document).ready(function () {
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.bottom >= 0
+      );
+    }
+
+    function checkFadeIn() {
+      $('.fade-in-element').each(function () {
+        if (isInViewport(this)) {
+          $(this).addClass('show');
+        }
+      });
+    }
+
+    // Run on scroll, load, and resize
+    $(window).on('load scroll resize', checkFadeIn);
+ 
      $(window).scroll(function () {
       if ($(window).scrollTop() === 0) {
         $('.navbar').removeClass('shadow-lg');
